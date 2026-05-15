@@ -1,17 +1,16 @@
 package com.pipecoding.ec.firtsapirest.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @Entity
 @Table(name = "clientes")
 public class Cliente implements Serializable {
@@ -27,6 +26,6 @@ public class Cliente implements Serializable {
     @Column(name = "correo")
     private String correo;
     @Column(name = "fecha_registro")
-    private String fechaRegistro;
+    private Date fechaRegistro;
 
 }

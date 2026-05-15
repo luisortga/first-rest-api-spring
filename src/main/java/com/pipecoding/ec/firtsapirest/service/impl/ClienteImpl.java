@@ -1,6 +1,7 @@
 package com.pipecoding.ec.firtsapirest.service.impl;
 
-import com.pipecoding.ec.firtsapirest.dao.ClienteDao;
+import com.pipecoding.ec.firtsapirest.model.dao.ClienteDao;
+import com.pipecoding.ec.firtsapirest.model.dto.ClienteDto;
 import com.pipecoding.ec.firtsapirest.model.entity.Cliente;
 import com.pipecoding.ec.firtsapirest.service.ICliente;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,17 @@ public class ClienteImpl implements ICliente {
     @Autowired
     private ClienteDao clienteDao;
 
+
+    @Transactional
     @Override
-    public Cliente save(Cliente cliente) {
+    public Cliente save(ClienteDto clienteDto) {
+        Cliente cliente = Cliente.builder()
+                .idCliente(clienteDto.getIdCliente())
+                .nombre(clienteDto.getNombre())
+                .apellido(clienteDto.getApellido())
+                .correo(clienteDto.getCorreo())
+                .fechaRegistro(clienteDto.getFechaRegistro())
+                .build();
         return clienteDao.save(cliente);
     }
 
@@ -25,6 +35,7 @@ public class ClienteImpl implements ICliente {
         return clienteDao.findById(id).orElse(null);
     }
 
+    @Transactional
     @Override
     public void delete(Cliente cliente) {
         clienteDao.delete(cliente);

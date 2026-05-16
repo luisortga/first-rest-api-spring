@@ -20,7 +20,7 @@ public class ClienteServiceImpl implements IClienteService {
 
     @Override
     public List<Cliente> listAll() {
-        return (List) clienteDao.findAll();
+        return (List)clienteDao.findAll();
     }
 
     @Transactional

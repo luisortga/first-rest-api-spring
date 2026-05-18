@@ -39,6 +39,10 @@ public class Reboot {
         Map<Integer, String> count = new HashMap<>();
         count.put(1, "Hello");
         count.put(2, "World");
+
+        count.forEach((key, value) -> {
+            System.out.println(key + " : " + value);
+        });
     }
 
     /* System not setter */

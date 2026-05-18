@@ -1,5 +1,8 @@
 package com.pipecoding.ec.firtsapirest.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Reboot {
 
 
@@ -32,8 +35,10 @@ public class Reboot {
         this.sku = sku;
     }
 
-    public void setCodec(String codec) {
-        this.codec = codec;
+    public void sayMessages() {
+        Map<Integer, String> count = new HashMap<>();
+        count.put(1, "Hello");
+        count.put(2, "World");
     }
 
     /* System not setter */

@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
+@NoArgsConstructor // <- Esta es la línea clave que soluciona el error 500
+@AllArgsConstructor
 @ToString
 @Builder
 public class ClienteDto implements Serializable {
